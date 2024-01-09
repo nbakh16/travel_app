@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:travel_app/features/trip/domain/repos/trip_repo.dart';
+import '../../../../core/error/failure.dart';
 import '../entities/trip.dart';
 
 class GetTrips {
@@ -6,7 +8,7 @@ class GetTrips {
 
   GetTrips(this.repo);
 
-  Future<List<Trip>> call() {
+  Future<Either<Failure, List<Trip>>> call() {
     return repo.getTrips();
   }
 }
