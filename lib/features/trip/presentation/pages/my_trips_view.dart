@@ -13,7 +13,20 @@ class MyTripsView extends ConsumerWidget {
       itemCount: tripList.length,
       itemBuilder: (context, index) {
         final Trip trip = tripList[index];
-        return Text(trip.title);
+        return ListTile(
+          title: Text(
+            trip.title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          subtitle: Text(
+            trip.description,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          trailing: Text(
+            trip.location,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        );
       },
     );
   }
